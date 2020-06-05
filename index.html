@@ -10,15 +10,20 @@
     <h1 id="title"> Max Wiklund</h1>
     <p>My name is Max Wiklund, I’m currently a Pipeline Developer at MPC advertising. I have a generalist background focused on asset building. I have a strong passion for amazing vfx, pixel perfection and automation.</p>
     <h2><strong>Skils</strong></h2>
-    <p>I have mainly been developing in python but I'm proficient in Mel and C++.</p>
+    <!-- <p>I have mainly been developing in python.</p> -->
     <ul>
       <li>Python</li>
       <li>Mel</li>
       <li>C++</li>
     </ul>
+    <h2><strong>Work Experience</strong></h2>
+    <ul>
+      <li><p id="mpc_date"></p></li>
+      <li><p>Time at Fablefx: 142:00:00:00</p></li>
+    </ul>
     <h2>Contact</h2>
     <p>Ways of contacting me.</p>
-    <ul>
+    <ul class="icons">
       <li><a href="mailto:info@maxwiklund.com">Email</a></li>
       <li><a href="https://github.com/maxWiklund">Github</a></li>
       <li><a href="https://www.linkedin.com/in/max-wiklund-42a448142/">Linkedin</a></li>
@@ -27,4 +32,28 @@
     <hr />
     <p>Copyrright &copy; 2020 Max Wiklund. All Rights Reserved.</p>
   </body>
+<script>
+window.onload = function() {
+  // Month Day, Year Hour:Minute:Second, id-of-element-container
+  countUpFromTime("Sep 10, 2018 9:00:00", 'countup1'); // ****** Change this line!
+};
+function countUpFromTime(countFrom, id) {
+  countFrom = new Date(countFrom).getTime();
+  var now = new Date();
+  var countFrom = new Date(countFrom);
+  var timeDifference = (now - countFrom);
+    
+  var secondsInADay = 60 * 60 * 1000 * 24;
+  var secondsInAHour = 60 * 60 * 1000;
+    
+  days = Math.floor(timeDifference / (secondsInADay));
+  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+  document.getElementById("mpc_date").innerHTML = "Time at MPC: " + days + ":" + hours + ":" + mins + ":" + secs;
+
+  clearTimeout(countUpFromTime.interval);
+  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+}
+</script>
 </html>
