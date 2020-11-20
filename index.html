@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1 id="title"> Max Wiklund</h1>
-    <p>My name is Max Wiklund, I’m currently a Pipeline Developer at MPC advertising. I have a generalist background focusing on asset building. I have a strong passion for amazing vfx, pixel perfection and automation.</p>
+    <p>My name is Max Wiklund, Currently a Pipeline Developer at Untold Studios. I have a generalist background focusing on asset building. I have a strong passion for amazing vfx, pixel perfection and automation.</p>
     <h2>Skills</h2>
     <ul>
       <li>Python</li>
@@ -17,7 +17,8 @@
     </ul>
     <h2>Work Experience</h2>
     <ul>
-      <li><p id="mpc_date"></p></li>
+      <li><p id="current_company"></p></li>
+      <li><p>Time at MPC: 731:00:00:00</p></li>
       <li><p>Time at Fablefx: 142:00:00:00</p></li>
     </ul>
     <h2>Contact</h2>
@@ -32,7 +33,7 @@
   </body>
 <script>
 window.onload = function() {
-  countUpFromTime("Sep 10, 2018 9:00:00", 'countup1');
+  countUpFromTime("Nov 23, 2020 9:00:00", 'countup1');
 };
 function countUpFromTime(countFrom, id) {
   countFrom = new Date(countFrom).getTime();
@@ -47,7 +48,7 @@ function countUpFromTime(countFrom, id) {
   hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour));
   mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000));
   secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000);
-  document.getElementById("mpc_date").innerHTML = "Time at MPC: " + days + ":" + hours + ":" + mins + ":" + secs;
+  document.getElementById("current_company").innerHTML = "Time at Untold Studios: " + days + ":" + hours + ":" + mins + ":" + secs;
 
   clearTimeout(countUpFromTime.interval);
   countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
